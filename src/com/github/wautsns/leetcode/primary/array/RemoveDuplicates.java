@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.wautsns.leetcode.primary.arrary;
+package com.github.wautsns.leetcode.primary.array;
 
 /**
  * <pre>
