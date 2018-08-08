@@ -42,7 +42,7 @@ public class MaxProfit {
                 profit += prices[i - 1] - prices[buyIndex];
                 buyIndex = i;
             } // 今日比昨日价格高,则继续观望
-        // 最后一次尝试
+        // 尝试最后一次买卖
         int lastTry = prices[prices.length - 1] - prices[buyIndex];
         return lastTry <= 0 ? profit : profit + lastTry;
     }
