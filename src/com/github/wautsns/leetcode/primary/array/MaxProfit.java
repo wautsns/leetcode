@@ -30,35 +30,32 @@ package com.github.wautsns.leetcode.primary.array;
  */
 public class MaxProfit {
 
-    public static int maxProfit(int[] prices) {
-        if (prices == null || prices.length == 0)
-            return 0;
-        int profit = 0;
-        // 买入的索引位置
-        int buyIndex = 0;
-        for (int i = 1, l = prices.length; i < l; i++)
-            if (prices[i - 1] > prices[i]) { // 判断今日是否比昨日价格低
-                // 今日比昨日价格低,则应该在昨日抛售,并尝试在今日买入
-                profit += prices[i - 1] - prices[buyIndex];
-                buyIndex = i;
-            } // 今日比昨日价格高,则继续观望
-        // 尝试最后一次买卖
-        int lastTry = prices[prices.length - 1] - prices[buyIndex];
-        return lastTry <= 0 ? profit : profit + lastTry;
-    }
+	public static int maxProfit(int[] prices) {
+		if (prices == null || prices.length == 0)
+			return 0;
+		int profit = 0;
+		int buyIndex = 0;
+		for (int i = 1, l = prices.length; i < l; i++)
+			if (prices[i - 1] > prices[i]) {
+				profit += prices[i - 1] - prices[buyIndex];
+				buyIndex = i;
+			}
+		int lastTry = prices[prices.length - 1] - prices[buyIndex];
+		return lastTry <= 0 ? profit : profit + lastTry;
+	}
 
-    public static void main(String[] args) {
-        int[] prices = new int[] {
-                7, 6, 4, 3, 1
-        };
-        System.out.println(maxProfit(prices));
-    }
+	public static void main(String[] args) {
+		int[] prices = new int[] {
+			7, 6, 4, 3, 1
+		};
+		System.out.println(maxProfit(prices));
+	}
 
-    public int standard(int[] prices) {
-        int maxProfit = 0;
-        for (int i = 0; i < prices.length; i++)
-            if (i + 1 < prices.length && prices[i + 1] - prices[i] > 0)
-                maxProfit += prices[i + 1] - prices[i];
-        return maxProfit;
-    }
+	public int standard(int[] prices) {
+		int maxProfit = 0;
+		for (int i = 0; i < prices.length; i++)
+			if (i + 1 < prices.length && prices[i + 1] - prices[i] > 0)
+				maxProfit += prices[i + 1] - prices[i];
+		return maxProfit;
+	}
 }
