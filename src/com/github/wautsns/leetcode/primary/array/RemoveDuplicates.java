@@ -29,41 +29,38 @@ package com.github.wautsns.leetcode.primary.array;
  */
 public class RemoveDuplicates {
 
-    public static int removeDuplicates(int[] nums) {
-        if (nums == null || nums.length == 0)
-            return 0;
-        // 新数组长度,同时也标识着下一次放置字符的索引
-        int len = 1;
-        for (int i = 1, l = nums.length, front = nums[0]; i < l; i++)
-            if (front != nums[i]) { // 判断前一个字符与当前字符是否相同
-                // 前一个字符与当前字符相同,则将当前字符置入特定的索引
-                nums[len++] = nums[i];
-                // 前一个字符变为当前字符
-                front = nums[i];
-            }
-        return len;
-    }
+	public static int removeDuplicates(int[] nums) {
+		if (nums == null || nums.length == 0)
+			return 0;
+		int len = 1;
+		for (int i = 1, l = nums.length, front = nums[0]; i < l; i++)
+			if (front != nums[i]) {
+				nums[len++] = nums[i];
+				front = nums[i];
+			}
+		return len;
+	}
 
-    public static void main(String[] args) {
-        int[] nums = new int[] {
-                0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 5
-        };
-        // nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
-        int len = removeDuplicates(nums);
+	public static void main(String[] args) {
+		int[] nums = new int[] {
+			0, 0, 1, 1, 1, 2, 2, 3, 3, 4, 5
+		};
+		// nums 是以“引用”方式传递的。也就是说，不对实参做任何拷贝
+		int len = removeDuplicates(nums);
 
-        // 在函数里修改输入数组对于调用者是可见的。
-        // 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。
-        for (int i = 0; i < len; i++)
-            System.out.println(nums[i]);
-    }
+		// 在函数里修改输入数组对于调用者是可见的。
+		// 根据你的函数返回的长度, 它会打印出数组中该长度范围内的所有元素。
+		for (int i = 0; i < len; i++)
+			System.out.println(nums[i]);
+	}
 
-    public int standard(int[] nums) {
-        if (nums == null || nums.length == 0)
-            return 0;
-        int count = 1;
-        for (int i = 1; i < nums.length; i++)
-            if (nums[i - 1] != nums[i])
-                nums[count++] = nums[i];
-        return count;
-    }
+	public int standard(int[] nums) {
+		if (nums == null || nums.length == 0)
+			return 0;
+		int count = 1;
+		for (int i = 1; i < nums.length; i++)
+			if (nums[i - 1] != nums[i])
+				nums[count++] = nums[i];
+		return count;
+	}
 }
