@@ -16,6 +16,11 @@
 package com.github.wautsns.leetcode.primary.string;
 
 /**
+ * <pre>
+ * 编写一个函数，其作用是将输入的字符串反转过来。
+ *
+ * 题目详细见: https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/32/
+ * <pre>
  * @author wautsns →http://www.github.com/wautsns←
  *
  * @created 2018年8月10日
