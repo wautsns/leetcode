@@ -16,6 +16,13 @@
 package com.github.wautsns.leetcode.primary.string;
 
 /**
+ * <pre>
+ * 给定一个字符串，找到它的第一个不重复的字符，并返回它的索引。如果不存在，则返回 -1。
+ *
+ * 注意事项：您可以假定该字符串只包含小写字母。
+ *
+ * 题目详细见: https://leetcode-cn.com/explore/interview/card/top-interview-questions-easy/5/strings/34/
+ * </pre>
  * @author wautsns →http://www.github.com/wautsns←
  *
  * @created 2018年8月10日
